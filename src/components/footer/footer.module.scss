@@ -1,0 +1,22 @@
+@import '../styles/mixins';
+
+.footer {
+    @include flexRow;
+    @include justifySpaceAround;
+    max-width: 100px;
+    min-width: 100px;
+    margin: 25px auto 0;
+    
+    .logo {
+        img {
+            height: 40px;
+            width: 40px;
+            transition: all 1s;
+            object-fit: contain;
+
+            &:hover {
+                transform: rotateY(360deg);
+            }
+        }            
+    }
+}

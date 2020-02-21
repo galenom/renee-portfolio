@@ -1,0 +1,10 @@
+@import '../components/styles/mixins';
+
+.site {
+    @include flexCol;
+    height: 100vh;
+
+    .main {
+        flex: 1;
+    }
+}

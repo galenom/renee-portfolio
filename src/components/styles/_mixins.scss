@@ -1,0 +1,29 @@
+@mixin displayFlex {
+    display: flex;
+}
+
+@mixin justifyCenter {
+    justify-content: center;
+}
+
+@mixin justifySpaceAround {
+    justify-content: space-around;
+}
+
+@mixin alignCenter {
+    align-items: center;
+}
+
+@mixin flexCol {
+    @include displayFlex;
+    flex-direction: column;
+}
+
+@mixin flexRow {
+    @include displayFlex;
+    flex-direction: row;
+}
+
+@mixin luloFont {
+    font-family: 'Lulo-Clean-W01-One-Bold', sans-serif;
+}
