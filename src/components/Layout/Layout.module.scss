@@ -1,7 +1,8 @@
-@import '../components/styles/mixins';
+@import '../styles/mixins';
 
 .site {
     @include flexCol;
+    padding: 25px 0;
     height: 100vh;
 
     .main {

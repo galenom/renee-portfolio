@@ -1,0 +1,54 @@
+@import '../../styles/mixins';
+
+.navLinks {
+    background-color: white;
+    list-style: none;
+    margin: 0;
+    
+    &.navLinksMobile {
+        @include flexCol;
+        @include alignCenter;
+
+        padding: 50px 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        overflow: hidden;
+        transform: translateY(-100%);
+        transition: .4s;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+        box-shadow: 0 2.5px 5px rgba(0,0,0, .25);
+
+        &.open {
+            height: auto;
+            transform: translateY(0);
+        }
+
+        li {
+            &:not(:first-child) {
+                margin-top: 15px;
+            }
+        }
+    }
+
+    &.navLinksDesktop {
+        display: none;
+    }
+}
+
+@include breakpoint(md) {
+    .navLinks {
+        &.navLinksMobile {
+            display: none;
+            transform: translateY(-100%) !important;
+        }
+
+        &.navLinksDesktop {
+            @include flexRow;
+            @include alignCenter;
+            @include justifyCenter;
+        }
+    }
+}

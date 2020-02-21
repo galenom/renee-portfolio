@@ -1,0 +1,18 @@
+[
+    {
+        "title": "Portfolio",
+        "link": "/"
+    },
+    {
+        "title": "Illustrations",
+        "link": "/illustrations"
+    },
+    {
+        "title": "Photography",
+        "externalLink": "https://vsco.co/reneevalvarez/images"
+    },
+    {
+        "title": "Contact",
+        "link": "/contact"
+    }
+]

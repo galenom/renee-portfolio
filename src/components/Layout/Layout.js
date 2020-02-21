@@ -8,12 +8,12 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-import { Header } from "./header"
-import "./default.scss"
-import styles from './layout.module.scss';
-import { Footer } from "./footer"
+import { Header } from "../Header/index"
+import "../default.scss"
+import styles from './Layout.module.scss';
+import { Footer } from "./Footer"
 
-const Layout = ({ children }) => {
+export const Layout = ({ children }) => {
 
 
   return (
@@ -25,10 +25,8 @@ const Layout = ({ children }) => {
       <Footer />
     </div>
   )
-}
+};
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-}
-
-export default Layout
+};

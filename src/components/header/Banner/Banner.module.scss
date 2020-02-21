@@ -1,0 +1,45 @@
+@import '../../styles/mixins';
+
+.portfolioHeader {
+    @include flexCol;
+    @include justifyCenter;
+    @include alignCenter;
+
+    .graphicRenee {
+        z-index: -1;
+    }
+
+    .descriptionWrapper {
+        @include flexCol;
+
+        .portfolioDescription,
+        p {
+            @include luloFont;
+            margin: 0;
+            letter-spacing: -0.1em;
+            line-height: 1.2em;
+            text-align: center;
+        }
+
+        .portfolioDescription {
+            font-size: 27px;
+        }
+
+        p {
+            font-size: 11px;
+        }
+    }
+}
+
+@include breakpoint(md) {
+    .portfolioHeader {
+        @include flexRow;
+        margin-top: 25px;
+        .descriptionWrapper {
+            .portfolioDescription,
+            p {
+                text-align: left;
+            }
+        }
+    }
+}

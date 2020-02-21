@@ -199,7 +199,6 @@ html {
   box-sizing: inherit;
 }
 body {
-  color: hsla(0, 0%, 0%, 0.8);
   font-family: georgia, serif;
   font-weight: normal;
   word-wrap: break-word;
@@ -619,4 +618,9 @@ pre tt:after {
   html {
     font-size: 100%;
   }
+}
+
+@font-face{
+    font-family:"Lulo-One-Bold";
+    src:url("/luloOneBold.ttf");
 }

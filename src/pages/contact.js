@@ -4,9 +4,9 @@ import { Layout } from "../components/Layout/Layout"
 import SEO from "../components/seo"
 
 const IndexPage = () => (
-  <Layout>
-    <SEO title="Portfolio" />
-  </Layout>
+    <Layout>
+        <SEO title="Contact" />
+    </Layout>
 )
 
 export default IndexPage
