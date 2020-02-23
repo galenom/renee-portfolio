@@ -1,0 +1,31 @@
+@import '../components/styles/mixins';
+
+.gallery {
+    overflow: hidden;
+    transform-origin: 0 0;
+    animation: slideIn 0.5s;
+    column-count: 1;
+    column-gap: 0px;
+    row-gap: 0px;
+    line-height: 0;
+
+    .thumbnail {
+        outline: none;
+        margin: 0;
+        padding: 0;
+        border: none;
+        width: 100%;
+        height: auto;
+    }
+}
+
+@keyframes slideIn {
+    0% { transform: scale(0, 0); }
+    100% { transform: scale(1, 1); }
+}
+
+@include breakpoint(md) {
+    .gallery {
+        column-count: 2;
+    }
+}

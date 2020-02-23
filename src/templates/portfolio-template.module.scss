@@ -1,0 +1,16 @@
+@import '../components/styles/mixins';
+
+.detailContainer {
+    @include flexCol;
+    @include alignCenter;
+    .detailsSection {
+        max-width: 680px;
+
+        .title,
+        .sectionTitle {
+            @include luloFont;
+            text-align: center;
+            margin: 0;
+        }
+    }
+}

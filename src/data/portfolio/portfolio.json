@@ -1,0 +1,80 @@
+[
+    {
+        "mediaUrl": "/portfolio/flightGears.webp",
+        "id": "flightgears-packaging",
+        "information": {
+            "title": "Learning Resources®",
+            "description": "Learning Resources® is a leading global manufacturer of innovative, hands-on educational products trusted by teachers and parents and loved by children. The Company's 1100+ high-quality products are sold in more than 80 countries, serving children and their families, preschool, kindergarten, primary, and middle-school markets.",
+            "additionalDetails": [
+                {
+                    "sectionTitle": "FlightGears Packaging",
+                    "sectionDescription": "Kids build critical thinking and other STEM skills as they create their own moving, flying machines with propellers, wheels, and more. I went about designing the package with a fun and playful approach, putting the different flight builds in an imaginative environment."
+                }
+            ]
+        }
+    },
+    {
+        "mediaUrl": "/portfolio/saltCreek.webp",
+        "id": "salt-creek-ballet",
+        "information": {
+            "title": "Salt Creek Ballet",
+            "description": "Salt Creek Ballet was established in 1985 to present professional quality dance programming to west-suburban audiences, provide high-level performance opportunities for area dancers, and encourage appreciation and awareness of dance in an underserved area. The Company’s high standards and unique blend of major classical productions and artistically diverse and challenging repertory programs (including works set for the Company by both resident and guest choreographers) have brought critical acclaim, sold-out performances, and a loyal following.",
+            "additionalDetails": [
+                {
+                    "sectionTitle": "SCB Annual Report Publication",
+                    "sectionDescription": "I worked closely with the marketing team at Salt Creek Ballet, and established a new an elegant feel for their 2016-2017 annual report. I was in charge up laying out the pages and formatting the copy and photography that was provided."
+                }
+            ]
+        }
+    },
+    {
+        "mediaUrl": "/portfolio/reveel.webp",
+        "id": "reveel",
+        "information": {
+            "title": "Reveel Brand Identity",
+            "description": "REVEEL is a social activity platform dedicated to inspiring people to find and join events and activities they love most. You can meet your friends and make new ones in real life through exciting activities curated around your interests – from Reveel's pioneering features like Nexus and their interest matching technologies, it’s never been easier to find awesome activities and meeting like-minded people.",
+            "additionalDetails": [
+                {
+                    "sectionTitle": "Logo Design",
+                    "sectionDescription": "REVEEL’s logo reflects the company’s core goals of creating a new social world. The “r” portrays a peel back (like a sticker), revealing another layer underneath. The roundness and boldness of the letterforms communicates engagement and excitement, coorelating to REVEEL’s tone and manner. "
+                }
+            ]
+        }
+    },
+    {
+        "mediaUrl": "/portfolio/geekJar.webp",
+        "id": "geek-jar",
+        "information": {
+            "title": "Geekjar Rebrand",
+            "description": "Geekjar is a gaming youtube channel inspired by everything GEEK. Originally, Geekjar had created a logo mark playing off of their name, and when I created the first and second version of their logo, I kept the jar as their mark, and essentially \"upgraded\" the jar's overall look. The colors I chose are from the first logo that they created, still keeping within their existing brand identity.",
+            "additionalDetails": []
+        }
+    },
+    {
+        "mediaUrl": "/portfolio/afterSchoolMatters.webp",
+        "id": "after-school-matters",
+        "information": {
+            "title": "After School Matters",
+            "description": "This project is a redesign project for a not-for-profit organization that provides art and science programs for Chicago students. ",
+            "additionalDetails": [
+                {
+                    "sectionTitle": "Logo Redesign-",
+                    "sectionDescription": "nspired by Chicago's grid layout, symbolizing multiple Chicago neighborhoods. The primary colors used were also used in After School Matters current branding, with the addition of a secondary color scheme for the students' supplies."
+                }
+            ]
+        }
+    },
+    {
+        "mediaUrl": "/portfolio/zza.webp",
+        "id": "zza"
+    },
+    {
+        "mediaUrl": "/portfolio/earlyMeadows.webp",
+        "id": "the-early-meadows",
+        "information": {
+            "title": "The Early Meadows",
+            "description": "A poster design for a Chicago-based indie-rock band.",
+            "additionalDetails": []
+        }
+    }
+]

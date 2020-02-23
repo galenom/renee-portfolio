@@ -4,7 +4,8 @@
     @include flexCol;
     @include justifyCenter;
     @include alignCenter;
-
+    margin: 25px 0;
+    
     .graphicRenee {
         z-index: -1;
     }
@@ -34,7 +35,7 @@
 @include breakpoint(md) {
     .portfolioHeader {
         @include flexRow;
-        margin-top: 25px;
+
         .descriptionWrapper {
             .portfolioDescription,
             p {

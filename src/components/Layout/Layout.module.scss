@@ -2,10 +2,20 @@
 
 .site {
     @include flexCol;
-    padding: 25px 0;
+    padding: 25px;
     height: 100vh;
 
     .main {
         flex: 1;
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+@include breakpoint(md) {
+    .site {
+        .main {
+            width: 980px;
+        }
     }
 }
