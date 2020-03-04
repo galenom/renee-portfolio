@@ -1,6 +1,6 @@
 [
     {
-        "mediaUrl": "/portfolio/flightGears.webp",
+        "imageName": "flightGears.png",
         "id": "flightgears-packaging",
         "information": {
             "title": "Learning Resources®",
@@ -14,7 +14,7 @@
         }
     },
     {
-        "mediaUrl": "/portfolio/saltCreek.webp",
+        "imageName": "saltCreek.png",
         "id": "salt-creek-ballet",
         "information": {
             "title": "Salt Creek Ballet",
@@ -28,7 +28,7 @@
         }
     },
     {
-        "mediaUrl": "/portfolio/reveel.webp",
+        "imageName": "reveel.png",
         "id": "reveel",
         "information": {
             "title": "Reveel Brand Identity",
@@ -42,7 +42,7 @@
         }
     },
     {
-        "mediaUrl": "/portfolio/geekJar.webp",
+        "imageName": "geekJar.png",
         "id": "geek-jar",
         "information": {
             "title": "Geekjar Rebrand",
@@ -51,7 +51,7 @@
         }
     },
     {
-        "mediaUrl": "/portfolio/afterSchoolMatters.webp",
+        "imageName": "afterSchoolMatters.png",
         "id": "after-school-matters",
         "information": {
             "title": "After School Matters",
@@ -65,11 +65,11 @@
         }
     },
     {
-        "mediaUrl": "/portfolio/zza.webp",
+        "imageName": "zza.png",
         "id": "zza"
     },
     {
-        "mediaUrl": "/portfolio/earlyMeadows.webp",
+        "imageName": "earlyMeadows.png",
         "id": "the-early-meadows",
         "information": {
             "title": "The Early Meadows",
