@@ -37,7 +37,7 @@ export default ({ data }) => {
     
 export const query = graphql`
     query {
-        allFile(filter: {relativeDirectory: {eq: "portfolio"}}) {
+        allFile(filter: {relativeDirectory: {eq: "portfolio"}}, sort: {fields: name, order: ASC}) {
             images: edges {
                 node {
                     childImageSharp {
