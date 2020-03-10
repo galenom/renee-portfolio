@@ -22,6 +22,9 @@ export default ({ data }) => {
                         ))
                     }
                 </section>
+                { detail?.information?.iframeUrl && (
+                    <iframe src={detail?.information?.iframeUrl} className={styles.iframe}></iframe>
+                )}
                 <section className={styles.images}>
                     {
                         images.map(({ node: { childImageSharp: { fluid } } }) => {
@@ -45,7 +48,8 @@ export const query = graphql`
                 additionalDetails {
                     sectionTitle,
                     sectionDescription
-                }
+                },
+                iframeUrl
             }
         }
         allFile(filter: {relativeDirectory: {eq: $imageFolderSlug }}) {
