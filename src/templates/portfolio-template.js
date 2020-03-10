@@ -5,7 +5,7 @@ import styles from './portfolio-template.module.scss'
 import GatsbyImage from "gatsby-image"
 
 export default ({ data }) => {
-    const { information } = data.portfolioJson
+    const { information, id } = data.portfolioJson
     const { images } = data.allFile
     return (
         <Layout>
@@ -23,7 +23,7 @@ export default ({ data }) => {
                     }
                 </section>
                 { information?.iframeUrl && (
-                    <iframe src={information?.iframeUrl} className={styles.iframe} />
+                    <iframe src={information?.iframeUrl} className={styles.iframe} title={`iframe-${id}`}/>
                 )}
                 <section className={styles.images}>
                     {

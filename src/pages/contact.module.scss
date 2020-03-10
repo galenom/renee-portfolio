@@ -1,0 +1,66 @@
+@import '../components/styles/mixins';
+
+.form {
+    @include flexCol;
+    @include alignCenter;
+    margin: 0 auto;
+    font-family: sans-serif;
+
+    & > * {
+        width: 100%;
+    }
+    .greeting,
+    .textarea {
+        @include luloFont;
+    }
+
+    .greeting {
+        font-size: 17px;
+        text-align: center;
+    }
+
+    .inputs,
+    .textarea {
+        border: none;
+        padding: 15px;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    .inputs {
+        border-bottom: 2px solid black;
+        font-size: 15px;
+        &:not(:first-child) {
+            margin-top: 15px;
+        }
+    }
+
+    .textarea {
+        margin-top: 15px;
+        height: 150px;
+        resize: none;
+        font-size: 12px;
+
+        &:focus {
+            border: 1px solid rgba(0,0,0, 0.1);
+            border-radius: 5px;
+        }
+    }
+
+    button {
+        @include luloFont;
+        font-size: 10px;
+        margin-top: 10px;
+        width: auto;
+        padding: 10px 75px;
+        border: 1px solid black;
+    }
+}
+
+@include breakpoint(md) {
+    .form {
+        max-width: 500px;
+    }
+}
