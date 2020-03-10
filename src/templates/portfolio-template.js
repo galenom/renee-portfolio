@@ -2,9 +2,11 @@ import React from "react"
 import { graphql } from "gatsby"
 import { Layout } from "../components/Layout"
 import styles from './portfolio-template.module.scss'
+import GatsbyImage from "gatsby-image"
 
 export default ({ data }) => {
     const detail = data.portfolioJson
+    const { images } = data.allFile
     return (
         <Layout>
             <div className={styles.detailContainer}>
@@ -20,14 +22,22 @@ export default ({ data }) => {
                         ))
                     }
                 </section>
+                <section className={styles.images}>
+                    {
+                        images.map(({ node: { childImageSharp: { fluid } } }) => {
+                            console.log(fluid);
+                            return <GatsbyImage fluid={fluid} />
+                        })
+                    }
+                </section>
             </div>
         </Layout>
     );
 }
 
 export const query = graphql`
-    query($slug: String!) {
-        portfolioJson(fields: { slug: { eq: $slug } }) {
+    query($id: String!, $imageFolderSlug: String!) {
+        portfolioJson(id: { eq: $id }) {
             id,
             information {
                 title,
@@ -35,6 +45,17 @@ export const query = graphql`
                 additionalDetails {
                     sectionTitle,
                     sectionDescription
+                }
+            }
+        }
+        allFile(filter: {relativeDirectory: {eq: $imageFolderSlug }}) {
+            images: edges {
+                node {
+                    childImageSharp {
+                        fluid(maxWidth: 980) {
+                            ...GatsbyImageSharpFluid_withWebp_noBase64  
+                        }
+                    }
                 }
             }
         }

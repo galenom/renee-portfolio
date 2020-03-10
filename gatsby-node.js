@@ -19,9 +19,7 @@ exports.createPages = async ({ graphql, actions }) => {
             allPortfolioJson {
                 edges {
                     node {
-                        fields {
-                            slug
-                        }
+                        id
                     }
                 }
             }
@@ -29,10 +27,11 @@ exports.createPages = async ({ graphql, actions }) => {
     `)
     result.data.allPortfolioJson.edges.forEach(({ node }) => {
         createPage({
-            path: node.fields.slug,
+            path: `/${node.id}/`,
             component: path.resolve(`./src/templates/portfolio-template.js`),
             context: {
-                slug: node.fields.slug,
+                id: node.id,
+                imageFolderSlug: `portfolio/${node.id}`
             },
         })
     })
