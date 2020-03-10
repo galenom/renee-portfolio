@@ -1,6 +1,6 @@
 [
     {
-        "imageName": "flightGears.png",
+        "imageName": "10-flightGears.png",
         "id": "flightgears-packaging",
         "information": {
             "title": "Learning Resources®",
@@ -14,7 +14,7 @@
         }
     },
     {
-        "imageName": "saltCreek.png",
+        "imageName": "01-saltCreek.png",
         "id": "salt-creek-ballet",
         "information": {
             "title": "Salt Creek Ballet",
@@ -29,7 +29,7 @@
         }
     },
     {
-        "imageName": "reveel.png",
+        "imageName": "07-reveel.png",
         "id": "reveel",
         "information": {
             "title": "Reveel Brand Identity",
@@ -43,7 +43,7 @@
         }
     },
     {
-        "imageName": "geekJar.png",
+        "imageName": "08-geekJar.png",
         "id": "geekjar",
         "information": {
             "title": "Geekjar Rebrand",
@@ -52,7 +52,7 @@
         }
     },
     {
-        "imageName": "afterSchoolMatters.png",
+        "imageName": "05-afterSchoolMatters.png",
         "id": "after-school-matters",
         "information": {
             "title": "After School Matters",
@@ -66,11 +66,11 @@
         }
     },
     {
-        "imageName": "zza.png",
+        "imageName": "09-zza.png",
         "id": "zza"
     },
     {
-        "imageName": "earlyMeadows.png",
+        "imageName": "03-earlyMeadows.png",
         "id": "the-early-meadows",
         "information": {
             "title": "The Early Meadows",

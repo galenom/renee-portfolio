@@ -17,6 +17,24 @@
         width: 100%;
         height: auto;
     }
+
+    .thumbnailLink {
+        cursor: pointer;
+        transition: all .4s;
+        overflow: hidden;
+
+        &:hover {
+            opacity: 0.7;
+        }
+
+        .image {
+            transition: all .4s;
+
+            &:hover {
+                transform: scale(1.1, 1.1);
+            }
+        }
+    }
 }
 
 @keyframes slideIn {

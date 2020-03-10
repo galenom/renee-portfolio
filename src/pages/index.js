@@ -20,12 +20,19 @@ export default ({ data }) => {
                                     .find((edge) => edge.imageName === fluid.originalName);
 
                         return (
-                            <button className={styles.thumbnail} onClick={() => {
-                                if (edge) {
-                                    navigate(`/${edge.id}`)
-                                }
-                            }}>
-                                <GatsbyImage fluid={{ ...fluid }} />
+                            <button
+                                className={
+                                    [styles.thumbnail, edge && styles.thumbnailLink]
+                                        .filter(Boolean)
+                                        .join(' ')
+                                } 
+                                onClick={() => {
+                                    if (edge) {
+                                        navigate(`/${edge.id}`)
+                                    }
+                                }}
+                            >
+                                <GatsbyImage fluid={{ ...fluid }} className={styles.image} />
                             </button>
                         )
                     })

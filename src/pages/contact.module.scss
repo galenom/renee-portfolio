@@ -56,6 +56,13 @@
         width: auto;
         padding: 10px 75px;
         border: 1px solid black;
+        transition: all .5s;
+        cursor: pointer;
+
+        &:hover {
+            background-color: black;
+            color: white;
+        }
     }
 }
 
