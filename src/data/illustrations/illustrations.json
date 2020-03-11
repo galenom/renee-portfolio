@@ -1,0 +1,110 @@
+[
+    {
+        "imageName": "gigi.jpeg",
+        "details": {
+            "title": "Gigi",
+            "subtitle": "Ink and marker on paper"
+        },
+        "id": "gigi",
+        "order": 1
+    },
+    {
+        "imageName": "arizona.jpeg",
+        "details": {
+            "title": "Arizona",
+            "subtitle": "Ink and marker on paper"
+        },
+        "id": "arizona",
+        "order": 2
+    },
+    {
+        "imageName": "a_witches_potion.jpg",
+        "details": {
+            "title": "A Witch's Potion",
+            "subtitle": "Ink and marker on paper"
+        },
+        "id": "a_witches_potion",
+        "order": 3
+    },
+    {
+        "imageName": "kaonashi.jpeg",
+        "details": {
+            "title": "Kaonashi",
+            "subtitle": "Ink and marker on paper"
+        },
+        "id": "kaonoshi",
+        "order": 4
+    },
+    {
+        "imageName": "link.jpeg",
+        "details": {
+            "title": "Link",
+            "subtitle": "Ink and marker on paper"
+        },
+        "id": "link",
+        "order": 5
+    },
+    {
+        "imageName": "lydia_deetz.jpeg",
+        "details": {
+            "title": "Lydia Deetz",
+            "subtitle": "Ink and marker on paper"
+        },
+        "id": "lydia_deetz",
+        "order": 6
+    },
+    {
+        "imageName": "a_jar_of_fireflies.jpg",
+        "details": {
+            "title": "A Jar of Fireflies",
+            "subtitle": "Ink and marker on paper"
+        },
+        "id": "a_jar_of_fireflies",
+        "order": 7
+    },
+    {
+        "imageName": "naruto_dreams_of_ramen.jpg",
+        "details": {
+            "title": "Naruto Dreams of Ramen",
+            "subtitle": "Ink and marker on paper"
+        },
+        "id": "naruto_dreams_of_ramen",
+        "order": 8
+    },
+    {
+        "imageName": "skelegirl.jpg",
+        "details": {
+            "title": "Skelegirl",
+            "subtitle": "Ink and marker on paper"
+        },
+        "id": "skelegirl",
+        "order": 9
+    },
+    {
+        "imageName": "witch.jpg",
+        "details": {
+            "title": "Witch",
+            "subtitle": "Ink and marker on paper"
+        },
+        "id": "witch",
+        "order": 10
+    },
+    {
+        "imageName": "a_smiling_mandrake.jpg",
+        "details": {
+            "title": "A smiling Mandrake",
+            "subtitle": "Ink and marker on paper"
+        },
+        "id": "a_smiling_mandrake",
+        "order": 11
+    },
+    {
+        "imageName": "raven.jpg",
+        "details": {
+            "title": "Raven",
+            "subtitle": "Ink and marker on paper"
+        },
+        "id": "raven",
+        "order": 12
+    }
+]

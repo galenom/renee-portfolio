@@ -5,13 +5,13 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
-import PropTypes from "prop-types"
+import React from 'react'
+import PropTypes from 'prop-types'
 
-import "../default.scss"
+import '../default.scss'
 import styles from './Layout.module.scss';
-import { Footer } from "../Footer"
-import { Header } from "../Header";
+import { Footer } from '../Footer'
+import { Header } from '../Header';
 
 export const Layout = ({ children }) => {
 

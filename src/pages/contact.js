@@ -1,8 +1,8 @@
-import React from "react"
+import React from 'react'
 
-import { Layout } from "../components/Layout/Layout"
-import SEO from "../components/seo"
-import styles from './contact.module.scss';
+import { Layout } from '../components/Layout/Layout'
+import SEO from '../components/seo'
+import styles from './styles/contact.module.scss';
 
 const IndexPage = () => (
     <Layout>

@@ -1,10 +1,9 @@
-import React from "react"
+import React from 'react'
 import { graphql, navigate } from 'gatsby';
-import SEO from "../components/seo";
-import { Layout } from "../components/Layout/Layout"
-import styles from './index.module.scss';
-import GatsbyImage from "gatsby-image";
-
+import GatsbyImage from 'gatsby-image';
+import SEO from '../components/seo';
+import { Layout } from '../components/Layout/Layout'
+import styles from './styles/index.module.scss';
 
 export default ({ data }) => {
     const { allFile: { images }, allPortfolioJson: { edges } } = data;

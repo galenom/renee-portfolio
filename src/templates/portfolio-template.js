@@ -1,8 +1,8 @@
-import React from "react"
-import { graphql } from "gatsby"
-import { Layout } from "../components/Layout"
+import React from 'react'
+import { graphql } from 'gatsby'
+import { Layout } from '../components/Layout'
 import styles from './portfolio-template.module.scss'
-import GatsbyImage from "gatsby-image"
+import GatsbyImage from 'gatsby-image'
 
 export default ({ data }) => {
     const { information, id } = data.portfolioJson
@@ -27,10 +27,9 @@ export default ({ data }) => {
                 )}
                 <section className={styles.images}>
                     {
-                        images.map(({ node: { childImageSharp: { fluid } } }) => {
-                            console.log(fluid);
-                            return <GatsbyImage fluid={fluid} />
-                        })
+                        images.map(({ node: { childImageSharp: { fluid } } }) => (
+                            <GatsbyImage fluid={fluid} />
+                        ))
                     }
                 </section>
             </div>
