@@ -10,6 +10,8 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sass`,
+    `gatsby-plugin-netlify-cms`,
+    'gatsby-plugin-netlify-identity-widget',
     {
       resolve: `gatsby-source-filesystem`,
       options: {
