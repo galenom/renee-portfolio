@@ -20,8 +20,16 @@ module.exports = {
     `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-netlify-identity-widget`,
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `markdown-projects`,
+        path: `${__dirname}/projects`
+      }
+    },
+    {
       resolve: `gatsby-transformer-remark`,
       options: {
+        name: `markdown-projects`,
         plugins: [
           {
             resolve: `gatsby-remark-relative-images`,
@@ -65,13 +73,6 @@ module.exports = {
         name: `illustrations`,
         path: `${__dirname}/src/data/illustrations`,
       },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `markdown-projects`,
-        path: `${__dirname}/projects`
-      }
     },
     {
       resolve: `gatsby-plugin-manifest`,
