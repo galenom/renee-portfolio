@@ -5,13 +5,39 @@ module.exports = {
     author: `@galenom`,
   },
   plugins: [
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/static/assets`,
+        name: 'assets',
+      },
+    },
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-json`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-netlify-cms`,
-    'gatsby-plugin-netlify-identity-widget',
+    `gatsby-plugin-netlify-identity-widget`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-relative-images`,
+            options: {
+              name: 'assets'
+            }
+          },
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 590
+            }
+          }
+        ]
+      }
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -39,6 +65,13 @@ module.exports = {
         name: `illustrations`,
         path: `${__dirname}/src/data/illustrations`,
       },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `markdown-projects`,
+        path: `${__dirname}/projects`
+      }
     },
     {
       resolve: `gatsby-plugin-manifest`,

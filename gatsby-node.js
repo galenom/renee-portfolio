@@ -1,37 +1,32 @@
 const path = require(`path`)
+const { fmImagesToRelative } = require('gatsby-remark-relative-images')
 
-exports.onCreateNode = ({ node, actions }) => {
-    if (node.internal.type === 'PortfolioJson') {
-        const { createNodeField } = actions;
-        const slug = `/${node.id}/`;
-        createNodeField({
-            node,
-            name: `slug`,
-            value: slug,
-        });
-    }
-}
+exports.onCreateNode = ({ node }) => {
+    fmImagesToRelative (node);
+};
 
 exports.createPages = async ({ graphql, actions }) => {
     const { createPage } = actions;
     const result = await graphql(`
         query {
-            allPortfolioJson {
+            allMarkdownRemark {
                 edges {
                     node {
-                        id
+                        frontmatter{
+                            path
+                            id
+                        }
                     }
                 }
             }
         }
     `)
-    result.data.allPortfolioJson.edges.forEach(({ node }) => {
+    result.data.allMarkdownRemark.edges.forEach(({ node: { frontmatter } }) => {
         createPage({
-            path: `/${node.id}/`,
+            path: frontmatter.path,
             component: path.resolve(`./src/templates/portfolio-template.js`),
             context: {
-                id: node.id,
-                imageFolderSlug: `portfolio/${node.id}`
+                id: frontmatter.id
             },
         })
     })

@@ -6,8 +6,8 @@
     .detailsSection {
         max-width: 680px;
 
-        .title,
-        .sectionTitle {
+        h2,
+        h3   {
             @include luloFont;
             text-align: center;
             margin: 0;
