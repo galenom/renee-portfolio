@@ -4,6 +4,8 @@ path: flightgears-packaging
 title: Learning Resources®
 gallery:
   - /assets/flightgears.png
+images:
+  - /assets/flightgears.png
 ---
 Learning Resources® is a leading global manufacturer of innovative, hands-on educational products trusted by teachers and parents and loved by children. The Company's 1100+ high-quality products are sold in more than 80 countries, serving children and their families, preschool, kindergarten, primary, and middle-school markets.
 
