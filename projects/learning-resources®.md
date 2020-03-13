@@ -2,8 +2,6 @@
 id: flightgears-packaging
 path: flightgears-packaging
 title: Learning Resources®
-gallery:
-  - /assets/flightgears.png
 images:
   - /assets/flightgears.png
 ---

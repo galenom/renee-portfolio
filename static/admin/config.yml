@@ -1,6 +1,5 @@
 backend:
   name: git-gateway
-  repo: galenom/cms-config
 
 media_folder: static/assets
 public_folder: /assets
@@ -8,15 +7,24 @@ public_folder: /assets
 collections:
   - label: "Project Detail"
     name: "project detail"
-    folder: "project/"
+    folder: "projects/"
     create: true
     fields:
-      - { label: "ID", name: "id" }
-      - { label: "Path", name: "path" } 
-      - { label: "Title", name: "title" }
-      - { label: "Body", name: "body", widget: 'markdown'}
-      - label: "gallery"
-        name: "gallery"
+      - label: "ID"
+        name: "id"
+      - label: "Path"
+        name: "path"
+        hint: "Path to project page. i.e., `/client-a` is accessible at `mysite.com/client-a`"
+        pattern: ['^(\/([\w-]{1,}))+', "Start with a forward slash and not include whitespace"]
+      - label: "Title"
+        name: "title"
+      - label: "Body"
+        name: "body"
+        widget: 'markdown'
+      - label: "Images"
+        name: "images"
         widget: "list"
         field: { label: Image, name: image, widget: image }
-
+      - label: "IFrame"
+        name: "iframe"
+        required: false
