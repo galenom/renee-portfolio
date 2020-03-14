@@ -9,7 +9,7 @@ exports.createPages = async ({ graphql, actions }) => {
     const { createPage } = actions;
     const result = await graphql(`
         query {
-            allMarkdownRemark {
+            allProjectPosts: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/src/data/projects/.*\.md$/"}}) {
                 edges {
                     node {
                         frontmatter{
@@ -21,7 +21,7 @@ exports.createPages = async ({ graphql, actions }) => {
             }
         }
     `)
-    result.data.allMarkdownRemark.edges.forEach(({ node: { frontmatter } }) => {
+    result.data.allProjectPosts.edges.forEach(({ node: { frontmatter } }) => {
         createPage({
             path: frontmatter.path,
             component: path.resolve(`./src/templates/portfolio-template.js`),

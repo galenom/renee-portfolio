@@ -6,9 +6,31 @@ import styles from './Menu.module.scss'
 
 export const Menu = () => {
     const [isNavOpen, setIsNavOpen] = useState(false);
-    const { links } = useStaticQuery(graphql`
+    const {
+        allMenuItems: {
+            edges: links
+        }
+    } = useStaticQuery(graphql`
         query {
-            links: allNavigationJson { edges { node { id, title, link, externalLink } } }
+            allMenuItems: allMarkdownRemark(
+                filter: {
+                    fileAbsolutePath: {
+                        regex: "/src/data/menu/.*\\\\.md$/"
+                    }
+                },
+                sort: {fields: frontmatter___order}
+            ) {
+                edges {
+                    node {
+                        frontmatter{
+                            label
+                            link
+                            isExternal
+                            order
+                        }
+                    }
+                }
+            }
         }
     `)
     
@@ -17,7 +39,7 @@ export const Menu = () => {
         <nav>
             {/* Mobile Nav */}
             <List
-                links={links.edges}
+                links={links}
                 className={
                     [
                         styles.navLinks,
@@ -28,7 +50,7 @@ export const Menu = () => {
             />
             {/* Desktop Nav */}
             <List
-                links={links.edges}
+                links={links}
                 className={`${styles.navLinks} ${styles.navLinksDesktop}`}
             />
             <HamburgerButton {...{ isNavOpen, setIsNavOpen }} />

@@ -5,26 +5,44 @@ media_folder: static/assets
 public_folder: /assets
 
 collections:
-  - label: "Project Detail"
-    name: "project detail"
-    folder: "projects/"
+  - label: 'Menu Item'
+    name: 'menu item'
+    folder: 'data/menu'
     create: true
     fields:
-      - label: "ID"
-        name: "id"
-      - label: "Path"
-        name: "path"
-        hint: "Path to project page. i.e., `/client-a` is accessible at `mysite.com/client-a`"
-        pattern: ['^(\/([\w-]{1,}))+', "Start with a forward slash and not include whitespace"]
-      - label: "Title"
-        name: "title"
-      - label: "Body"
-        name: "body"
+      - label: 'Label'
+        name: label
+      - label: 'Link'
+        name: link
+        hint: 'Can be relative path (common, i.e. `/projects/prj-a`) or absolute (for external sites, i.e. `http://example.com` )'
+      - label: 'Is External'
+        name: isExternal
+        widget: boolean
+        hint: 'Indicate if is external link'
+      - label: 'Order'
+        name: order
+        widget: number
+        hint: Number to indicate order it should appear   
+  - label: 'Project Detail'
+    name: 'project detail'
+    folder: 'data/projects'
+    create: true
+    fields:
+      - label: 'ID'
+        name: 'id'
+      - label: 'Path'
+        name: 'path'
+        hint: 'Path to project page. i.e., `/client-a` is accessible at `mysite.com/client-a`'
+        pattern: ['^(\/([\w-]{1,}))+', 'Start with a forward slash and not include whitespace']
+      - label: 'Title'
+        name: 'title'
+      - label: 'Body'
+        name: 'body'
         widget: 'markdown'
-      - label: "Images"
-        name: "images"
-        widget: "list"
+      - label: 'Images'
+        name: 'images'
+        widget: 'list'
         field: { label: Image, name: image, widget: image }
-      - label: "IFrame"
-        name: "iframe"
+      - label: 'IFrame'
+        name: 'iframe'
         required: false

@@ -23,13 +23,19 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `markdown-projects`,
-        path: `${__dirname}/projects`
+        path: `${__dirname}/src/data/projects`
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `markdown-menu`,
+        path: `${__dirname}/src/data/menu`
       }
     },
     {
       resolve: `gatsby-transformer-remark`,
       options: {
-        name: `markdown-projects`,
         plugins: [
           {
             resolve: `gatsby-remark-relative-images`,
@@ -51,13 +57,6 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/data/images`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `links`,
-        path: `${__dirname}/src/data/navigation`,
       },
     },
     {
