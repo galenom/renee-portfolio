@@ -6,11 +6,9 @@ import styles from './Banner.module.scss'
 export const Banner = () => {
     const { headerImage } = useStaticQuery(graphql`
         query {
-            headerImage: file(relativePath: { eq: "graphic-renee.png" }) {
-                childImageSharp {
-                    fixed(width: 150, height: 150) {
-                        ...GatsbyImageSharpFixed_withWebp_noBase64
-                    }
+            headerImage: imageSharp(fixed: {originalName: {eq: "graphic-renee.png"}}) {
+                fixed(width: 150, height: 150) {
+                    ...GatsbyImageSharpFixed_withWebp_tracedSVG
                 }
             }
         }
@@ -19,7 +17,7 @@ export const Banner = () => {
     return (
         <section className={styles.portfolioHeader}>
             <Img
-                fixed={headerImage.childImageSharp.fixed}
+                fixed={headerImage.fixed}
                 className={styles.graphicRenee}
                 alt='renee-graphic-rendition'
             />

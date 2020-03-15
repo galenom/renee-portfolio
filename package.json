@@ -28,6 +28,7 @@
     "react-helmet": "^5.2.1"
   },
   "devDependencies": {
+    "netlify-cms-proxy-server": "^1.2.1",
     "prettier": "^1.19.1"
   },
   "keywords": [
