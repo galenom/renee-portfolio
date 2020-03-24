@@ -7,7 +7,7 @@ public_folder: /assets
 collections:
   - label: 'Menu Item'
     name: 'menu item'
-    folder: 'data/menu'
+    folder: 'src/data/menu'
     create: true
     fields:
       - label: 'Label'
@@ -25,7 +25,7 @@ collections:
         hint: Number to indicate order it should appear   
   - label: 'Project Detail'
     name: 'project detail'
-    folder: 'data/projects'
+    folder: 'src/data/projects'
     create: true
     fields:
       - label: 'ID'
