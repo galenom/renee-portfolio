@@ -6,28 +6,26 @@ import { Layout } from '../components/Layout/Layout'
 import styles from './styles/index.module.scss';
 
 export default ({ data }) => {
-    const { allFile: { images }, allPortfolioJson: { edges } } = data;
+    const { markdownRemark: { frontmatter: { imageList } } } = data;
+
+    imageList.sort((a, b) => a.order - b.order);
 
     return (
         <Layout>
             <SEO title="Portfolio" />
             <div className={styles.gallery}>
                 {
-                    images.map(({ node: { childImageSharp: { fluid } } }) => {
-                        const edge = edges
-                                    .map((edge) => edge.node)
-                                    .find((edge) => edge.imageName === fluid.originalName);
-
+                    imageList.map(({ image: { childImageSharp: { fluid } }, path }) => {
                         return (
                             <button
                                 className={
-                                    [styles.thumbnail, edge && styles.thumbnailLink]
+                                    [styles.thumbnail, path && styles.thumbnailLink]
                                         .filter(Boolean)
                                         .join(' ')
                                 } 
                                 onClick={() => {
-                                    if (edge) {
-                                        navigate(`/${edge.id}`)
+                                    if (path) {
+                                        navigate(path)
                                     }
                                 }}
                             >
@@ -43,23 +41,18 @@ export default ({ data }) => {
     
 export const query = graphql`
     query {
-        allFile(filter: {relativeDirectory: {eq: "portfolio"}}, sort: {fields: name, order: ASC}) {
-            images: edges {
-                node {
-                    childImageSharp {
-                        fluid(maxWidth: 490) {
-                            ...GatsbyImageSharpFluid_withWebp_noBase64
-                            originalName
+        markdownRemark(fileAbsolutePath: {regex: "/src/data/galleries/homepage.md$/"}) {
+            frontmatter {
+                imageList {
+                    order
+                    path
+                    image {
+                        childImageSharp {
+                            fluid(maxWidth: 490) {
+                                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                            }
                         }
                     }
-                }
-            }
-        }
-        allPortfolioJson {
-            edges {
-                node {
-                    id,
-                    imageName
                 }
             }
         }

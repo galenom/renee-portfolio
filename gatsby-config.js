@@ -1,3 +1,18 @@
+const ImageRemarkPlugins = [
+  {
+    resolve: `gatsby-remark-relative-images`,
+    options: {
+      name: 'assets'
+    }
+  },
+  {
+    resolve: `gatsby-remark-images`,
+    options: {
+      maxWidth: 590
+    }
+  }
+]
+
 module.exports = {
   siteMetadata: {
     title: `Renee Alvarez`,
@@ -27,6 +42,12 @@ module.exports = {
       }
     },
     {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [...ImageRemarkPlugins]
+      }
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `markdown-menu`,
@@ -36,20 +57,20 @@ module.exports = {
     {
       resolve: `gatsby-transformer-remark`,
       options: {
-        plugins: [
-          {
-            resolve: `gatsby-remark-relative-images`,
-            options: {
-              name: 'assets'
-            }
-          },
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 590
-            }
-          }
-        ]
+        plugins: [...ImageRemarkPlugins]
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `markdown-galleries`,
+        path: `${__dirname}/src/data/galleries`
+      }
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [...ImageRemarkPlugins]
       }
     },
     {
@@ -57,13 +78,6 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/data/images`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `portfolio`,
-        path: `${__dirname}/src/data/portfolio`,
       },
     },
     {
@@ -82,7 +96,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/data/images/graphic-renee.png`, // This path is relative to the root of the site.
+        icon: `static/assets/graphic-renee.png`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
