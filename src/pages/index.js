@@ -41,7 +41,7 @@ export default ({ data }) => {
     
 export const query = graphql`
     query {
-        markdownRemark(fileAbsolutePath: {regex: "/src/data/galleries/homepage.md$/"}) {
+        markdownRemark(fileAbsolutePath: {regex: "/src/data/galleries/homepage/index.md$/"}) {
             frontmatter {
                 imageList {
                     order

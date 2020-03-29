@@ -63,8 +63,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `markdown-galleries`,
-        path: `${__dirname}/src/data/galleries`
+        name: `markdown-gallery-homepage`,
+        path: `${__dirname}/src/data/galleries/homepage`
       }
     },
     {
@@ -76,16 +76,15 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`,
-        path: `${__dirname}/src/data/images`,
-      },
+        name: `markdown-gallery-illustrations`,
+        path: `${__dirname}/src/data/galleries/illustrations`
+      }
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: `gatsby-transformer-remark`,
       options: {
-        name: `illustrations`,
-        path: `${__dirname}/src/data/illustrations`,
-      },
+        plugins: [...ImageRemarkPlugins]
+      }
     },
     {
       resolve: `gatsby-plugin-manifest`,

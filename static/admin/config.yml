@@ -53,7 +53,7 @@ collections:
     files:
       - label: 'Homepage'
         name: 'homepage'
-        file: 'src/data/galleries/homepage.md'
+        file: 'src/data/galleries/homepage/index.md'
         fields:
           - label: 'Images'
             name: 'imageList'
@@ -74,3 +74,22 @@ collections:
                 name: order
                 widget: number
                 hint: Top-Bottom then Left-Right
+      - label: 'Illustrations'
+        name: 'illustrations'
+        file: 'src/data/galleries/illustrations/index.md'
+        fields:
+          - label: 'Images'
+            name: 'illustrationImagesAndDetails'
+            widget: 'list'
+            fields:
+              - label: 'Title'
+                name: 'title'
+              - label: 'Subitle'
+                name: 'subtitle'
+              - label: 'Image'
+                name: 'image'
+                widget: image
+              - label: 'Order'
+                name: order
+                widget: number
+                hint: Left-Right then Top-Bottom

@@ -1,5 +1,5 @@
 ---
-label: Contact Us
+label: Contact
 link: /contact
 isExternal: false
 order: 4

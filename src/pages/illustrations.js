@@ -7,25 +7,31 @@ import SEO from '../components/seo'
 import styles from './styles/illustrations.module.scss'
 
 const IllustrationsPage = ({ data }) => {
-    const illustrationsData = data.allIllustrationsJson.edges.sort((a, b) => (a.node.order - b.node.order))
-    const images = data.allFile.images.map((edge) => edge.node.childImageSharp);
+    const {
+        markdownRemark: {
+            frontmatter: {
+                illustrationImagesAndDetails
+            }
+        }
+    } = data;
+
+    illustrationImagesAndDetails.sort((a, b) => a.order - b.order)
 
     return (
         <Layout>
             <SEO title="Illustrations" />
             <div className={styles.gallery}>
                 {
-                    illustrationsData.map((d) => {
-                        const img = images.find((image) => image.fluid.originalName === d.node.imageName)
-
-                        if (img) {
-                            return (
-                                <button>
-                                    <GatsbyImage fluid={img.fluid} className={styles.img} imgStyle={{ height: '325px' }} />
-                                </button>
-                            );
-                        }
-                        return <p>{d.node.id}: {d.node.order}</p>
+                    illustrationImagesAndDetails.map(({ image }) => {
+                        return (
+                            <button>
+                                <GatsbyImage
+                                    fluid={image.childImageSharp.fluid}
+                                    className={styles.img}
+                                    imgStyle={{ height: '325px' }}
+                                />
+                            </button>
+                        );
                     })
                 }
             </div>
@@ -35,31 +41,24 @@ const IllustrationsPage = ({ data }) => {
 
 export const query = graphql`
     query {
-        allIllustrationsJson {
-            edges {
-                node {
-                    imageName
-                    details {
-                        title
-                        subtitle
-                    }
-                    order
-                }
-            }
-        }
-        allFile(filter: {relativeDirectory: {eq: "illustrations"}}) {
-            images: edges {
-                node {
+    markdownRemark(fileAbsolutePath: { regex: "/src/data/galleries/illustrations/index.md$/" }) {
+        frontmatter {
+            illustrationImagesAndDetails {
+                order
+                title
+                subtitle
+                image {
+                    id
                     childImageSharp {
                         fluid(maxWidth: 320) {
-                            ...GatsbyImageSharpFluid_withWebp_noBase64
-                            originalName
+                            ...GatsbyImageSharpFluid_withWebp_tracedSVG
                         }
                     }
                 }
             }
         }
     }
+}
 `
 
 export default IllustrationsPage
