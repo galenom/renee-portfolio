@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, {     useReducer } from 'react'
 import { graphql } from 'gatsby';
 import GatsbyImage from 'gatsby-image'
 
@@ -18,16 +18,33 @@ const IllustrationsPage = ({ data }) => {
 
     illustrationImagesAndDetails.sort((a, b) => a.order - b.order)
 
-    const [imageIndex, setImageIndex] = useState(null);
+    const reducer = (state, { idx }) => {
+        if (Number.isInteger(idx)) {
+            const { title } = illustrationImagesAndDetails[idx];
+            return {
+                imageIdx: idx,
+                titleTemplate: `${title} | %s`
+            };
+        } else if (idx === null) {
+            return { imageIdx: null, titleTemplate: null };
+        } else {
+            return state;
+        }
+    }
+
+    const [{ imageIdx, titleTemplate }, dispatch] = useReducer(reducer, {
+        imageIdx: null,
+        titleTemplate: null
+    })
 
     return (
         <Layout>
-            <SEO title="Illustrations" />
+            <SEO title="Illustrations" titleTemplate={titleTemplate} />
             <div className={styles.gallery}>
                 {
                     illustrationImagesAndDetails.map(({ image }, idx) => {
                         return (
-                            <button onClick={() => { setImageIndex(idx) }}>
+                            <button onClick={() => { dispatch({ idx }) }}>
                                 <GatsbyImage
                                     fluid={image.childImageSharp.fluid}
                                     className={styles.img}
@@ -39,21 +56,21 @@ const IllustrationsPage = ({ data }) => {
                 }
             </div>
             <ExpandedGalleryImage
-                isVisible={imageIndex !== null}
-                imageData={illustrationImagesAndDetails[imageIndex]}
+                isVisible={imageIdx !== null}
+                imageData={illustrationImagesAndDetails[imageIdx]}
                 closeModal={() => {
-                    setImageIndex(null);
+                    dispatch({ idx: null })
                 }}
                 onPrevious={() => {
-                    let newIndex = (imageIndex - 1) % (illustrationImagesAndDetails.length - 1);
+                    let newIndex = (imageIdx - 1) % (illustrationImagesAndDetails.length - 1);
                     if (newIndex < 0) {
                         newIndex = illustrationImagesAndDetails.length - 1
                     } 
-                    setImageIndex(newIndex)
+                    dispatch({ idx: newIndex })
                 }}
                 onNext={() => {
-                    const newIndex = (imageIndex + 1) % (illustrationImagesAndDetails.length - 1)
-                    setImageIndex(newIndex)
+                    const newIndex = (imageIdx + 1) % (illustrationImagesAndDetails.length - 1)
+                    dispatch({ idx: newIndex })
                 }}
             />
         </Layout>
