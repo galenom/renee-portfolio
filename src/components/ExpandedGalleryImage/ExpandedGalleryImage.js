@@ -18,7 +18,7 @@ export const ExpandedGalleryImage = ({
         !isVisible && styles.hidden
     ].filter(Boolean).join(' ');
 
-    return createPortal(
+    return typeof window !== 'undefined' && createPortal(
         <aside className={modalClasses}>
             <section className={styles.controls}>
                 <button className={styles.closeBtn} onClick={closeModal}>X</button>
