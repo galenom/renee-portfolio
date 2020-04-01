@@ -1,0 +1,57 @@
+@import '../styles/mixins';
+
+.portal {
+    @include flexCol;
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    background-color: #fefefe;
+    padding: 25px;
+
+    &.hidden {
+        display: none;
+    }
+
+    .controls {
+        @include flexRow;
+        @include justifyFlexEnd;
+        
+        .closeBtn {
+            border: none;
+            padding: 5px;
+            margin: 0;
+            top: 25px;
+            right: 25px;
+        }
+    }
+
+    .content {
+        @include flexRow;
+        max-height: 100%;
+        flex: 1;
+
+        .carousel {
+            @include flexRow;
+            @include justifySpaceBetween;
+            @include alignCenter;
+            flex: 2;
+
+            .img {
+                flex: 1;
+                height: 100%;
+
+                & > :first-child {
+                    padding-bottom: 0 !important;
+                }
+
+                img {
+                    box-shadow: 10px 10px 10px rgba(0,0,0, 0.25)
+                }
+                
+            }
+        }
+
+        .details {
+            flex: 1;
+        }
+    }
+}

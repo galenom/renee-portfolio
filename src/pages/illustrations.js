@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { graphql } from 'gatsby';
 import GatsbyImage from 'gatsby-image'
 
 import { Layout } from '../components/Layout/Layout'
 import SEO from '../components/seo'
 import styles from './styles/illustrations.module.scss'
+import { ExpandedGalleryImage } from '../components/ExpandedGalleryImage';
 
 const IllustrationsPage = ({ data }) => {
     const {
@@ -17,14 +18,16 @@ const IllustrationsPage = ({ data }) => {
 
     illustrationImagesAndDetails.sort((a, b) => a.order - b.order)
 
+    const [imageIndex, setImageIndex] = useState(null);
+
     return (
         <Layout>
             <SEO title="Illustrations" />
             <div className={styles.gallery}>
                 {
-                    illustrationImagesAndDetails.map(({ image }) => {
+                    illustrationImagesAndDetails.map(({ image }, idx) => {
                         return (
-                            <button>
+                            <button onClick={() => { setImageIndex(idx) }}>
                                 <GatsbyImage
                                     fluid={image.childImageSharp.fluid}
                                     className={styles.img}
@@ -35,6 +38,24 @@ const IllustrationsPage = ({ data }) => {
                     })
                 }
             </div>
+            <ExpandedGalleryImage
+                isVisible={imageIndex !== null}
+                imageData={illustrationImagesAndDetails[imageIndex]}
+                closeModal={() => {
+                    setImageIndex(null);
+                }}
+                onPrevious={() => {
+                    let newIndex = (imageIndex - 1) % (illustrationImagesAndDetails.length - 1);
+                    if (newIndex < 0) {
+                        newIndex = illustrationImagesAndDetails.length - 1
+                    } 
+                    setImageIndex(newIndex)
+                }}
+                onNext={() => {
+                    const newIndex = (imageIndex + 1) % (illustrationImagesAndDetails.length - 1)
+                    setImageIndex(newIndex)
+                }}
+            />
         </Layout>
     )
 }
