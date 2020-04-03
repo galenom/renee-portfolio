@@ -1,6 +1,8 @@
 import React, {     useReducer } from 'react'
 import { graphql } from 'gatsby';
 import GatsbyImage from 'gatsby-image'
+import HeartEmpty from '@material-ui/icons/FavoriteBorder';
+import Heart from '@material-ui/icons/Favorite';
 
 import { Layout } from '../components/Layout/Layout'
 import SEO from '../components/seo'
@@ -44,12 +46,16 @@ const IllustrationsPage = ({ data }) => {
                 {
                     illustrationImagesAndDetails.map(({ image }, idx) => {
                         return (
-                            <button onClick={() => { dispatch({ idx }) }}>
+                            <button onClick={() => { dispatch({ idx }) }} key={idx}>
                                 <GatsbyImage
                                     fluid={image.childImageSharp.fluid}
                                     className={styles.img}
                                     imgStyle={{ height: '325px' }}
                                 />
+                                <span className={styles.heart} >
+                                    {/* <Heart style={{ color: 'red' }} /> */}
+                                    <HeartEmpty style={{ color: 'white' }} />
+                                </span>
                             </button>
                         );
                     })

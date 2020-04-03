@@ -4,6 +4,7 @@
     @include flexCol;
     padding: 25px;
     height: 100vh;
+    overflow: scroll;
 
     .main {
         flex: 1;
