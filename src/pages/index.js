@@ -15,7 +15,7 @@ export default ({ data }) => {
             <SEO title="Portfolio" />
             <div className={styles.gallery}>
                 {
-                    imageList.map(({ image: { childImageSharp: { fluid } }, path }) => {
+                    imageList.map(({ image: { childImageSharp: { fluid } }, path }, idx) => {
                         return (
                             <button
                                 className={
@@ -28,6 +28,7 @@ export default ({ data }) => {
                                         navigate(path)
                                     }
                                 }}
+                                key={idx}
                             >
                                 <GatsbyImage fluid={{ ...fluid }} className={styles.image} />
                             </button>

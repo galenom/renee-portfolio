@@ -6,7 +6,7 @@ export const List = ({ links, className }) => {
     return (
         <ul className={className}>
             {links.map(({ node: link }) => (
-                <li key={link.id} className={styles.menuList}>
+                <li key={link.frontmatter.label} className={styles.menuList}>
                     <Link {...link} />
                 </li>
             ))}
