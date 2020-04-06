@@ -1,7 +1,6 @@
 @import '../../components/styles/mixins';
 
 .gallery {
-    overflow: hidden;
     transform-origin: 0 0;
     animation: slideIn 0.5s;
     column-count: 1;
@@ -16,12 +15,15 @@
         border: none;
         width: 100%;
         height: auto;
+
+        .image {
+            overflow: initial !important;
+        }
     }
 
     .thumbnailLink {
         cursor: pointer;
         transition: all .4s;
-        overflow: hidden;
 
         &:hover {
             opacity: 0.7;
@@ -29,10 +31,6 @@
 
         .image {
             transition: all .4s;
-
-            &:hover {
-                transform: scale(1.1, 1.1);
-            }
         }
     }
 }

@@ -2,7 +2,7 @@
 
 .site {
     @include flexCol;
-    padding: 25px;
+    padding-bottom: 25px;
 
     .main {
         flex: 1;
@@ -13,6 +13,8 @@
 
 @include breakpoint(md) {
     .site {
+        padding: 25px;
+
         .main {
             width: 980px;
         }
