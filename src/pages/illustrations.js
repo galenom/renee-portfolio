@@ -45,10 +45,9 @@ const IllustrationsPage = ({ data }) => {
                 {
                     illustrationImagesAndDetails.map(({ image, title }, idx) => {
                         return (
-                            <div className={styles.imgBtnWrapper}>
+                            <div className={styles.imgBtnWrapper} key={idx}>
                                 <button
                                     onClick={() => { dispatch({ idx }) }}
-                                    key={idx}
                                     className={styles.imgBtn}
                                 >
                                     <GatsbyImage
@@ -56,11 +55,11 @@ const IllustrationsPage = ({ data }) => {
                                         className={styles.img}
                                     />
                                 </button>
-                                <button className={styles.overlay}>
+                                <div className={styles.overlay}>
                                     <span className={styles.heart} >
                                         <Favorite title={title} />
                                     </span>
-                                </button>
+                                </div>
                             </div>
                         );
                     })
