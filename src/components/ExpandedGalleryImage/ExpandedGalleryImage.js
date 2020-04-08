@@ -8,6 +8,7 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import styles from './ExpandedGalleryImage.module.scss';
 import { useScrollLock } from '../hooks/useScrollLock';
+import { Favorite } from '../Favorite';
 
 export const ExpandedGalleryImage = ({
     isVisible,
@@ -34,6 +35,7 @@ export const ExpandedGalleryImage = ({
                 <button className={styles.backBtn} onClick={closeModal}>
                     <KeyboardBackspaceIcon fontSize="large" />
                 </button>
+                <Favorite title={imageData?.title} dark/>
                 <button className={styles.closeBtn} onClick={closeModal}>
                     <CloseIcon fontSize="large" />
                 </button>

@@ -3,7 +3,7 @@ import HeartEmpty from '@material-ui/icons/FavoriteBorder';
 import Heart from '@material-ui/icons/Favorite';
 import styles from './Favorite.module.scss';
 
-export const Favorite = ({ title }) => {
+export const Favorite = ({ title, dark = false}) => {
   const reducer = (state, _) => {
     const isFavorited = !state.isFavorited;
     if (isFavorited) {
@@ -30,7 +30,7 @@ export const Favorite = ({ title }) => {
         className={styles.btn}
         onClick={() => dispatch()}
       >
-        <HeartEmpty style={{ color: 'white' }} />
+        <HeartEmpty style={{ color: dark ? 'black' : 'white' }} />
       </button>
     );
   }

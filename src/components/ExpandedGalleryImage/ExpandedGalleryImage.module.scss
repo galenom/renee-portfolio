@@ -61,8 +61,6 @@
 @include breakpoint(md) {
     .portal {
         .controls {
-            @include justifyFlexEnd;
-
             .backBtn {
                 display: none;
             }
