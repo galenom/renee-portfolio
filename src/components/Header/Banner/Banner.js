@@ -8,7 +8,7 @@ export const Banner = () => {
         query {
             headerImage: imageSharp(fixed: {originalName: {eq: "graphic-renee.png"}}) {
                 fixed(width: 150, height: 150) {
-                    ...GatsbyImageSharpFixed_withWebp_tracedSVG
+                    ...GatsbyImageSharpFixed_withWebp_noBase64
                 }
             }
         }

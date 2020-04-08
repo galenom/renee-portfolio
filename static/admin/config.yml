@@ -1,28 +1,37 @@
 backend:
   name: git-gateway
 
+local_backend: true
+
 media_folder: static/assets
 public_folder: /assets
 
 collections:
-  - label: 'Menu Item'
-    name: 'menu item'
-    folder: 'src/data/menu'
-    create: true
-    fields:
-      - label: 'Label'
-        name: label
-      - label: 'Link'
-        name: link
-        hint: 'Can be relative path (common, i.e. `/projects/prj-a`) or absolute (for external sites, i.e. `http://example.com` )'
-      - label: 'Is External'
-        name: isExternal
-        widget: boolean
-        hint: 'Indicate if is external link'
-      - label: 'Order'
-        name: order
-        widget: number
-        hint: Number to indicate order it should appear
+  - label: 'Menu List'
+    name: 'menu list'
+    files:
+      - label: 'Menu'
+        name: 'menu'
+        file: 'src/data/menu/index.md'
+        fields:
+          - label: 'List'
+            name: 'menuList'
+            widget: 'list'
+            fields:
+              - label: 'Label'
+                name: label
+              - label: 'Link'
+                name: link
+                hint: 'Can be relative path (common, i.e. `/projects/prj-a`) or absolute (for external sites, i.e. `http://example.com` )'
+              - label: 'Is External'
+                name: isExternal
+                widget: boolean
+                required: false
+                hint: 'Indicate if is external link'
+              - label: 'Order'
+                name: order
+                widget: number
+                hint: Number to indicate order it should appear
   - label: 'Project Detail'
     name: 'project detail'
     folder: 'src/data/projects'

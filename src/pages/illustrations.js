@@ -50,7 +50,6 @@ const IllustrationsPage = ({ data }) => {
                                 <GatsbyImage
                                     fluid={image.childImageSharp.fluid}
                                     className={styles.img}
-                                    imgStyle={{ height: '325px' }}
                                 />
                                 <span className={styles.heart} >
                                     {/* <Heart style={{ color: 'red' }} /> */}
@@ -84,7 +83,7 @@ const IllustrationsPage = ({ data }) => {
 }
 
 export const query = graphql`
-    query {
+query {
     markdownRemark(fileAbsolutePath: { regex: "/src/data/galleries/illustrations/index.md$/" }) {
         frontmatter {
             illustrationImagesAndDetails {

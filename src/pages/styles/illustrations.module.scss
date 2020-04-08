@@ -4,16 +4,16 @@
     @include flexRow;
     flex-wrap: wrap;
     button {
-        padding: 10px;
+        padding: 5px 0;
         margin: 0;
         border: none;
         overflow: hidden;
         background-color: transparent;
         outline: none;
         flex: 1;
-        min-width: 33%;
-        max-width: 33%;
-        height: 325px;
+        min-width: 100%;
+        max-width: 100%;
+        height: auto;
         position: relative;
 
         .img {
@@ -44,6 +44,28 @@
             bottom: 15px;
             left: 15px;
             z-index: 10;
+        }
+    }
+}
+
+@include breakpoint(sm) {
+    .gallery {
+        button {
+            padding: 10px;
+            min-width: 50%;
+            max-width: 50%;
+            height: 325px;
+        }
+    }
+}
+
+@include breakpoint(md) {
+    .gallery {
+        button {
+            padding: 10px;
+            min-width: 33%;
+            max-width: 33%;
+            height: 325px;
         }
     }
 }

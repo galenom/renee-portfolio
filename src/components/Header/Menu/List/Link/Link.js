@@ -2,7 +2,7 @@ import React from 'react';
 import { Link as GatsbyLink } from 'gatsby';
 import styles from './Link.module.scss';
 
-export const Link = ({ frontmatter: { label, link, isExternal } }) => {
+export const Link = ({ label, link, isExternal }) => {
     if (isExternal) {
         return <a href={link} target='_blank' rel='noopener noreferrer'>{label}</a>;
     } else {
