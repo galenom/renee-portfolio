@@ -4,10 +4,10 @@
     @include flexCol;
     position: absolute;
     top: 0; right: 0; bottom: 0; left: 0;
-    background-color: #fefefe;
-    padding: 25px;
+    background-color: #f0f0f0;
     opacity: 1;
     transition: opacity .5s;
+    z-index: 100;
 
     &.hidden {
         opacity: 0;
@@ -16,50 +16,89 @@
 
     .controls {
         @include flexRow;
-        @include justifyFlexEnd;
-        
+        @include justifySpaceBetween;
+        padding: 20px;
+
+        .backBtn,
         .closeBtn {
-            border: none;
-            padding: 5px;
+            padding: 0;
             margin: 0;
-            top: 25px;
-            right: 25px;
+            border: none;
+            background-color: transparent;
+        }
+
+        .closeBtn {
+            display: none;
         }
     }
 
     .content {
-        @include flexRow;
-        max-height: 100%;
-        flex: 1;
+        @include flexCol;
 
         .carousel {
             @include flexRow;
-            @include justifySpaceBetween;
-            @include alignCenter;
-            flex: 2;
 
             .carouselBtn {
+                display: none;
+                padding: 0;
+                margin: 0;
                 border: none;
+                background-color: transparent;
             }
 
             .img {
                 flex: 1;
-                height: 100%;
-                margin: 0 5px;
-
-                & > :first-child {
-                    padding-bottom: 0 !important;
-                }
-
-                img {
-                    box-shadow: 10px 10px 10px rgba(0,0,0, 0.25)
-                }
-                
+                max-height: 65vh;
             }
         }
 
         .details {
+            padding: 20px;
+        }
+    }
+}
+
+@include breakpoint(md) {
+    .portal {
+        .controls {
+            @include justifyFlexEnd;
+
+            .backBtn {
+                display: none;
+            }
+
+            .closeBtn {
+                display: initial;
+            }
+        }
+
+        .content {
+            @include flexRow;
             flex: 1;
+            padding-bottom: 20px;
+
+            .carousel {
+                @include alignCenter;
+                flex: 2;
+
+                .carouselBtn {
+                    display: initial;
+                    height: auto;
+                }
+
+                .img {
+                    height: 100%;
+                    max-height: initial;
+
+                    & > :first-child {
+                        padding-bottom: 0 !important;
+                    }
+                }
+            }
+
+            .details {
+                flex: 1;
+            }
         }
     }
 }

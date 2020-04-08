@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from 'react'
+import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 
 import '../default.scss'
@@ -15,6 +15,19 @@ import { Header } from '../Header';
 
 export const Layout = ({ children }) => {
 
+  useEffect(() => {
+    window.addEventListener("mousedown", (e) => {
+      if (e.target.tagName === 'IMG') {
+        e.preventDefault();
+      }
+    });
+
+    window.addEventListener('contextmenu', function (e) {
+      if (e.target.tagName === 'IMG') {
+        e.preventDefault();
+      }
+    });
+  }, []);
 
   return (
     <div className={styles.site}>

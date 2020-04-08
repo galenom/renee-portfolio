@@ -1,7 +1,9 @@
 import React from 'react';
 import { createPortal } from 'react-dom';
 import GatsbyImage from 'gatsby-image'
+import { useSwipeable } from 'react-swipeable';
 import CloseIcon from '@material-ui/icons/Close';
+import KeyboardBackspaceIcon from '@material-ui/icons/KeyboardBackspace';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import styles from './ExpandedGalleryImage.module.scss';
@@ -21,16 +23,24 @@ export const ExpandedGalleryImage = ({
         !isVisible && styles.hidden
     ].filter(Boolean).join(' ');
 
+    const handlers = useSwipeable({
+        onSwipedLeft: onNext,
+        onSwipedRight: onPrevious
+    })
+
     return typeof window !== 'undefined' && createPortal(
         <aside className={modalClasses}>
             <section className={styles.controls}>
+                <button className={styles.backBtn} onClick={closeModal}>
+                    <KeyboardBackspaceIcon fontSize="large" />
+                </button>
                 <button className={styles.closeBtn} onClick={closeModal}>
-                    <CloseIcon />
+                    <CloseIcon fontSize="large" />
                 </button>
             </section>
             <article className={styles.content}>
-                <section className={styles.carousel}>
-                        <button className={styles.carouselBtn} onClick={onPrevious}><ChevronLeftIcon /></button>
+                <section className={styles.carousel} {...handlers}>
+                        <button className={styles.carouselBtn} onClick={onPrevious}><ChevronLeftIcon fontSize="large" /></button>
                         {
                             imageData && (
                                 <GatsbyImage
@@ -42,7 +52,7 @@ export const ExpandedGalleryImage = ({
                                 />
                             )
                         }
-                        <button className={styles.carouselBtn} onClick={onNext}><ChevronRightIcon /></button>
+                        <button className={styles.carouselBtn} onClick={onNext}><ChevronRightIcon fontSize="large" /></button>
                 </section>
                 <section className={styles.details}>
                     <h1>{imageData?.title}</h1>
