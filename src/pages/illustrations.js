@@ -1,13 +1,12 @@
-import React, {     useReducer } from 'react'
+import React, { useReducer } from 'react'
 import { graphql } from 'gatsby';
 import GatsbyImage from 'gatsby-image'
-import HeartEmpty from '@material-ui/icons/FavoriteBorder';
-import Heart from '@material-ui/icons/Favorite';
 
 import { Layout } from '../components/Layout/Layout'
 import SEO from '../components/seo'
 import styles from './styles/illustrations.module.scss'
 import { ExpandedGalleryImage } from '../components/ExpandedGalleryImage';
+import { Favorite } from '../components/Favorite';
 
 const IllustrationsPage = ({ data }) => {
     const {
@@ -44,18 +43,25 @@ const IllustrationsPage = ({ data }) => {
             <SEO title="Illustrations" titleTemplate={titleTemplate} />
             <div className={styles.gallery}>
                 {
-                    illustrationImagesAndDetails.map(({ image }, idx) => {
+                    illustrationImagesAndDetails.map(({ image, title }, idx) => {
                         return (
-                            <button onClick={() => { dispatch({ idx }) }} key={idx}>
-                                <GatsbyImage
-                                    fluid={image.childImageSharp.fluid}
-                                    className={styles.img}
-                                />
-                                <span className={styles.heart} >
-                                    {/* <Heart style={{ color: 'red' }} /> */}
-                                    <HeartEmpty style={{ color: 'white' }} />
-                                </span>
-                            </button>
+                            <div className={styles.imgBtnWrapper}>
+                                <button
+                                    onClick={() => { dispatch({ idx }) }}
+                                    key={idx}
+                                    className={styles.imgBtn}
+                                >
+                                    <GatsbyImage
+                                        fluid={image.childImageSharp.fluid}
+                                        className={styles.img}
+                                    />
+                                </button>
+                                <button className={styles.overlay}>
+                                    <span className={styles.heart} >
+                                        <Favorite title={title} />
+                                    </span>
+                                </button>
+                            </div>
                         );
                     })
                 }

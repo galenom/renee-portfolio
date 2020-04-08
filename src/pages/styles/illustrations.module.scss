@@ -3,12 +3,8 @@
 .gallery {
     @include flexRow;
     flex-wrap: wrap;
-    button {
-        padding: 5px 0;
-        margin: 0;
-        border: none;
-        overflow: hidden;
-        background-color: transparent;
+
+    .imgBtnWrapper {
         outline: none;
         flex: 1;
         min-width: 100%;
@@ -16,56 +12,101 @@
         height: auto;
         position: relative;
 
-        .img {
-            height: 100%;
+        .imgBtn {
+            padding: 5px 0;
+            margin: 0;
+            cursor: pointer;
+            border: none;
+            background-color: transparent;
+            overflow: hidden;
             width: 100%;
-        }
+            height: 100%;
 
-        &::after {
-            content: " ";
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            bottom: 10px;
-            left: 10px;
-            background-color: grey;
-            opacity: 0;
-            transition: opacity .2s;
-        }
-
-        &:hover {
-            &::after {
-                opacity: 0.5;
+            .img {
+                height: 100%;
+                width: 100%;
             }
         }
 
-        .heart {
-            position: absolute;
-            bottom: 15px;
-            left: 15px;
-            z-index: 10;
+        .overlay {
+            padding: 5px 0;
+            margin: 0;
+            cursor: pointer;
+            border: none;
+            background-color: transparent;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+
+            &::after {
+                content: " ";
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                bottom: 10px;
+                left: 10px;
+                background-color: grey;
+                opacity: 0;
+                transition: opacity .2s;
+                pointer-events: none;
+            }
+
+            .heart {
+                position: absolute;
+                bottom: 15px;
+                left: 15px;
+                z-index: 10;
+                opacity: 0;
+                transition: opacity .2s;
+            }
+        }
+
+        &:hover {
+            .overlay{
+                &::after {
+                    opacity: 0.5;
+                }
+
+                .heart {
+                    opacity: 1;
+                }
+            }
         }
     }
 }
 
 @include breakpoint(sm) {
     .gallery {
-        button {
-            padding: 10px;
+        .imgBtnWrapper {
             min-width: 50%;
             max-width: 50%;
-            height: 325px;
+            height: auto;
+
+            .imgBtn {
+                padding: 10px;
+            }
+
+            .overlay {
+                top: 10px; right: 10px; bottom: 10px; left: 10px;
+            }
         }
     }
 }
 
 @include breakpoint(md) {
     .gallery {
-        button {
-            padding: 10px;
+        .imgBtnWrapper {
             min-width: 33%;
             max-width: 33%;
             height: 325px;
+            
+            .imgBtn {
+                padding: 10px;
+            }
+
+            .overlay {
+                top: 10px; right: 10px; bottom: 10px; left: 10px;
+            }
         }
     }
 }
